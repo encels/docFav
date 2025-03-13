@@ -70,7 +70,7 @@ curl --location 'http://localhost:8080/index.php' \
 - **Cuerpo**: 
   ```json
   {
-      "name": "Juan Parez",
+      "name": "Juan Pérez",
       "email": "juan.perez2025@example.com",
       "password": "Tucontraseñasegura1"
   }
