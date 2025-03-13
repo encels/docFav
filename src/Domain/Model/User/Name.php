@@ -57,8 +57,8 @@ final class Name
             );
         }
 
-        if (!preg_match('/^[a-zA-Z\s]+$/u', $name)) {
-            throw new InvalidArgumentException('Name can only contain letters and spaces.');
+        if (!preg_match('/^[a-zA-ZÀ-ÿ\s]+$/u', $name)) {
+            throw new InvalidArgumentException('Name can only contain letters and spaces, including accented characters.');
         }
     }
 
