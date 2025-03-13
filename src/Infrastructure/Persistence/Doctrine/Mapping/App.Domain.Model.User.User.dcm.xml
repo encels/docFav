@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                  https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Domain\Model\User\User" table="users">
+        <id name="id" type="user_id" column="id">
+            <generator strategy="NONE" />
+        </id>
+        
+        <embedded name="name" class="App\Domain\Model\User\Name" use-column-prefix="false" />
+        <embedded name="email" class="App\Domain\Model\User\Email" use-column-prefix="false" />
+        <embedded name="password" class="App\Domain\Model\User\Password" use-column-prefix="false" />
+        
+        <field name="createdAt" type="datetime" column="created_at" />
+    </entity>
+</doctrine-mapping>
