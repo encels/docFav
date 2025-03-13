@@ -67,17 +67,11 @@ final class RegisterUserController
                 'status' => 'success',
                 'data' => $response->toArray(),
             ];
-        } catch (InvalidEmailException | WeakPasswordException | UserAlreadyExistsException $e) {
-            // Handle specific exceptions
+        } catch (InvalidEmailException | WeakPasswordException | UserAlreadyExistsException | \Exception $e) {
             return [
                 'status' => 'error',
                 'message' => $e->getMessage(),
-            ];
-        } catch (\Exception $e) {
-            // Handle unexpected errors
-            return [
-                'status' => 'error',
-                'message' => self::GENERIC_ERROR_MESSAGE,
+                'exception_type' => basename(str_replace('\\', '/', get_class($e))),
             ];
         }
     }
