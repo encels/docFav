@@ -13,6 +13,6 @@
         <embedded name="email" class="App\Domain\Model\User\Email" use-column-prefix="false" />
         <embedded name="password" class="App\Domain\Model\User\Password" use-column-prefix="false" />
         
-        <field name="createdAt" type="datetime" column="created_at" />
+        <field name="createdAt" type="datetime_immutable" column="created_at" />
     </entity>
 </doctrine-mapping>
